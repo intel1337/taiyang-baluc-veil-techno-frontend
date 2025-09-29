@@ -1,0 +1,56 @@
+<template>
+  <section>
+    <div class="landing">
+      <h1>Welcome to the Kanban</h1>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua</p>
+      <router-link to="/kanban" class="button">Discover</router-link>
+    </div>
+  </section>
+</template>
+
+<style scoped>
+.landing{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100%;
+    gap: 3rem;
+}
+
+.landing h1{
+    font-size: 70px;
+}
+
+.button {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    width: 16%;
+    height: 10%;
+    border-radius: 25px;
+    background-color: rgb(0, 0, 0);
+    font-size: 30px;
+    transition: 0.7s ease-in-out;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+    color: white;
+    text-decoration: none;
+}
+
+.button:hover{
+    scale: 1.05;
+    transform: translate(0 ,5px);
+    background-color: white;
+    color: rgb(0, 0, 0);
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+}
+
+.landing p {
+    color: gray;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    width: fit-content;
+}
+</style>

@@ -1,0 +1,111 @@
+<template>
+  <div class="kanban">
+    <router-link to="/">Back to Main </router-link>
+    <button @click="addRow">+ Add a Column</button>
+
+    <div class="rows">
+        <div class="tasks-container">
+        
+        </div>
+   
+    </div>
+  </div>
+</template>
+
+
+
+<style scoped>
+.kanban {
+    height: 100vh;
+    width: 100%;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    margin: 10px;
+}
+
+.kanban  button, a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 10rem;
+    min-height: 40px;
+    border-radius: 8px;
+    background-color: black;
+    color: white;
+    border: none;
+    cursor: pointer;
+    padding: 0 15px;
+    margin-bottom: 20px;
+    transition: 0.3s ease-in-out;
+    
+}
+
+.kanban > button:hover {
+    background-color: green;
+}
+
+.rows {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.row {
+    background-color: #f5f5f5;
+    border-radius: 8px;
+    padding: 20px;
+    min-height: 200px;
+    display: flex;
+    flex-direction: column;
+    max-width: 35rem;
+}
+
+.row h3 {
+    margin: 0 0 10px 0;
+    color: black;
+}
+
+.row button {
+    background-color: rgb(0, 0, 0);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 8px 10px;
+    cursor: pointer;
+    margin: 10px;
+}
+
+.row button:hover {
+    background-color: darkblue;
+}
+
+.row textarea {
+    text-align: center;
+    width: 100%;
+    border: 1px solid gray;
+    border-radius: 5px;
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.row ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.tasks-container {
+  margin-top: 10px;
+}
+
+</style>
+
+<script setup>
+
+import { useRouter } from 'vue-router'
+
+const router = useRouter()
+
+
+</script>

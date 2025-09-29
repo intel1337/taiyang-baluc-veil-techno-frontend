@@ -4,8 +4,6 @@
 
   <div class="rows">
     <div class="row" *ngFor="let row of rows">
-      
-      <!-- Titre -->
       <textarea [(ngModel)]="row.title" rows="2" placeholder="Column Title"></textarea>
       <textarea [(ngModel)]="row.taskInput" rows="3" placeholder="Add Task"></textarea>
       <button (click)="addTask(row)">Add</button>
