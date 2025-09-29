@@ -1,0 +1,22 @@
+<div class="task-item" (click)="openMenu()">
+  <h4>{{ task.title }}</h4>
+</div>
+
+<div class="task-menu" *ngIf="showMenu" (click)="closeMenu()">
+  <div class="menu-content" (click)="$event.stopPropagation()">
+    <div *ngIf="!editMode">
+      <h2>{{ task.title }}</h2>
+      <textarea [(ngModel)]="task.description" rows="3"></textarea>
+      <button (click)="startEdit()">Edit</button>
+      <button (click)="confirmDelete()" class="delete-btn">Delete</button>
+      <button (click)="closeMenu()">Close</button>
+    </div>
+
+    <div *ngIf="editMode">
+      <input [(ngModel)]="editedTask.title" />
+      <textarea [(ngModel)]="editedTask.description" rows="3"></textarea>
+      <button (click)="saveTask()">Save</button>
+      <button (click)="editMode = false">Cancel</button>
+    </div>
+  </div>
+</div>
