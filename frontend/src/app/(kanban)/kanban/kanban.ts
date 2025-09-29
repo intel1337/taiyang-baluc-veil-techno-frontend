@@ -3,10 +3,11 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 
 import { Row, Task } from '../model/kanban';
+import { RouterOutlet, RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-kanban',
-  imports: [CommonModule, FormsModule],
+  imports: [CommonModule, FormsModule, RouterOutlet, RouterLink],
   templateUrl: './kanban.html',
   styleUrl: './kanban.css'
 })
