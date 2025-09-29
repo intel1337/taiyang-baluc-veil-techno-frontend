@@ -1,16 +1,19 @@
-<section>
-    <div class="container">
-        <div (onclick)="addNewRow()" class="add" >+</div>
+<div class="kanban">
+  <button (click)="addRow()">+ Ajouter une colonne</button>
 
-        <div class="tableau">
-            @for (row of counter; track row){
-                <app-row></app-row>
-            }@empty {
-                <app-row></app-row>
-                <app-row></app-row>
-                <app-row></app-row>
+  <div class="rows">
+    <div class="row" *ngFor="let row of rows">
+      
+      <!-- Titre -->
+      <textarea [(ngModel)]="row.title" rows="2" placeholder="Titre de la colonne"></textarea>
 
-            }
-        </div>
+      <!-- Tâches -->
+      <textarea [(ngModel)]="row.taskInput" rows="3" placeholder="Ajouter une tâche"></textarea>
+      <button (click)="addTask(row)">Ajouter</button>
+
+      <ul>
+        <li *ngFor="let task of row.tasks">{{ task.title }}</li>
+      </ul>
     </div>
-</section>
+  </div>
+</div>

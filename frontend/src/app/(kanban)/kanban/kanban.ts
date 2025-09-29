@@ -1,22 +1,32 @@
 import { Component } from '@angular/core';
-import { Row } from '../row/row';
+import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 
+import { Row, Task } from '../model/kanban';
 
 @Component({
   selector: 'app-kanban',
-  imports: [Row],
+  imports: [CommonModule, FormsModule],
   templateUrl: './kanban.html',
   styleUrl: './kanban.css'
 })
 export class Kanban {
-  counter = [1]
-  addNewRow(){
-    this.counter.push(1);
-    return this.counter
+  rows: Row[] = [];
+
+  addRow() {
+    this.rows.push({
+      title: 'New Column',
+      taskInput: '',
+      tasks: []
+    });
   }
-  getCount(){
-    return this.counter
+
+  addTask(row: Row) {
+    if (row.taskInput.trim()) {
+      row.tasks.push({
+        title: row.taskInput.trim()
+      });
+      row.taskInput = '';
+    }
   }
-  
-  
 }
