@@ -11,7 +11,7 @@ import { Task } from '../model/kanban';
 })
 
 export class TaskComponent {
-  @Input() task: Task;
+  @Input() task!: Task; // ! pour éviter une erreur
   @Output() deleteTask = new EventEmitter<number>();
   @Output() updateTask = new EventEmitter<Task>();
 
