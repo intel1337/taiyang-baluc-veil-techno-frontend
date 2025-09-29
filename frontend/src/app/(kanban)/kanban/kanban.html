@@ -1,17 +1,16 @@
 <section>
     <div class="container">
-        <div class="add" >+</div>
+        <div (onclick)="addNewRow()" class="add" >+</div>
 
         <div class="tableau">
-            <app-row></app-row>
-            <app-row></app-row>
-            <app-row></app-row>
-            <app-row></app-row>
-            <app-row></app-row>
-            <app-row></app-row>
-            <app-row></app-row>
-            <app-row></app-row>
-            <app-row></app-row>
+            @for (row of counter; track row){
+                <app-row></app-row>
+            }@empty {
+                <app-row></app-row>
+                <app-row></app-row>
+                <app-row></app-row>
+
+            }
         </div>
     </div>
 </section>

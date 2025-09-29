@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 
 @Component({
   selector: 'app-row',
@@ -7,5 +7,10 @@ import { Component } from '@angular/core';
   styleUrl: './row.css'
 })
 export class Row {
+  @Output() newRowEvent = new EventEmitter<Row>
+  
+  addNewRow(){
+    this.newRowEvent.emit()
+  }
 
 }
