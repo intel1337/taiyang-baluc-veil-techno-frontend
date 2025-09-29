@@ -1,0 +1,8 @@
+POST http://localhost:3000/api/task/create
+Content-Type: application/json
+
+{
+    "title": "Task 1",
+    "description": "Task 1 description",
+    "completed": false
+}
