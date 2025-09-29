@@ -108,3 +108,11 @@ start http://localhost:4200 // Windows
 ```
 
 
+# Déploiement
+### Prérequis :
+- vercel-cli
+- Compte Vercel
+
+```
+vercel --prod
+```
