@@ -5,10 +5,7 @@ import { Row, Task } from './model/kanban';
   providedIn: 'root'
 })
 export class KanbanService {
-  saveRow(row:any, task:Task){
-    localStorage.setItem('row', row)
-
-  }
+  
 
   
   

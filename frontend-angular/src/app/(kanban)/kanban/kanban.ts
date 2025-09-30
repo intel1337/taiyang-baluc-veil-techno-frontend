@@ -1,4 +1,4 @@
-import { Component, Input, SimpleChanges } from '@angular/core';
+import { Component, Input, OnInit, SimpleChanges } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 
@@ -12,7 +12,13 @@ import { TaskComponent } from '../task/task';
   templateUrl: './kanban.html',
   styleUrl: './kanban.css'
 })
-export class Kanban {
+export class Kanban implements OnInit{
+  ngOnInit(): void {
+    const savedRows = localStorage.getItem('rows');
+    if (savedRows) {
+      this.rows = JSON.parse(savedRows);
+    }
+  }
 
   
   
@@ -59,7 +65,11 @@ export class Kanban {
   updateTask(row: Row, updatedTask: Task) {
     const index = row.tasks.findIndex(task => task.id === updatedTask.id);
       row.tasks[index] = updatedTask;
-      this.updateRow()
+      this.updateRow()  
 
+  }
+  clearAll(){ 
+    localStorage.removeItem('rows')
+    this.rows = []
   }
 }
