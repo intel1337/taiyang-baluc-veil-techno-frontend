@@ -1,22 +1,42 @@
 <div class="task-item" (click)="openMenu()">
-  <h4>{{ task.title }}</h4>
+  <h4>{{ task.title }}</h4> 
+  <!-- Titre -->
 </div>
+<!--  div Cliquable -->
 
-<div class="task-menu" *ngIf="showMenu" (click)="closeMenu()">
+
+<!-- If menu open -->
+@if (showMenu) {
+  <div class="task-menu"(click)="closeMenu()">  
+    <!-- on click Ferme le menu via les states -->
   <div class="menu-content" (click)="$event.stopPropagation()">
-    <div *ngIf="!editMode">
+     @if (!editMode) {
+      <div>
       <h2>{{ task.title }}</h2>
       <textarea [(ngModel)]="task.description" rows="3"></textarea>
       <button (click)="startEdit()">Edit</button>
       <button (click)="confirmDelete()" class="delete-btn">Delete</button>
+      <!-- Envoi du signal au parent on click -->
       <button (click)="closeMenu()">Close</button>
+    <!-- on click Ferme le menu via les states -->
+
     </div>
 
-    <div *ngIf="editMode">
+    }
+    <!-- If edit Menu Open -->
+    @if (editMode) { 
+      <div>
+        <!-- Form Angular pour récuperer les inputs -->
       <input [(ngModel)]="editedTask.title" />
       <textarea [(ngModel)]="editedTask.description" rows="3"></textarea>
       <button (click)="saveTask()">Save</button>
       <button (click)="editMode = false">Cancel</button>
     </div>
+
+    }
+   
   </div>
 </div>
+}
+
+   

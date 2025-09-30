@@ -13,6 +13,7 @@ import { TaskComponent } from '../task/task';
   styleUrl: './kanban.css'
 })
 export class Kanban implements OnInit{
+  // Sur le mount du component prends les données dans le local storage si elles existent puis angular s'occupe de rerender
   ngOnInit(): void {
     const savedRows = localStorage.getItem('rows');
     if (savedRows) {
@@ -22,10 +23,10 @@ export class Kanban implements OnInit{
 
   
   
-  rows: Row[] = [];
-  private nextTaskId = 1;
+  rows: Row[] = []; // déclaration d'un array de type Row (voir /model)
+  private nextTaskId = 1; // ID pour track les task
 
-  addRow() {
+  addRow() { // Ajoute un Row
     this.rows.push({
       title: 'New Column',
       taskInput: '',
@@ -34,16 +35,16 @@ export class Kanban implements OnInit{
     this.saveRow()
     
   }
-  saveRow(){
-    let parsed = JSON.stringify(this.rows)
+  saveRow(){ // Save la row dans le localstorage 
+    let parsed = JSON.stringify(this.rows) // Serialization Json
     localStorage.setItem('rows', parsed)
   }
-  updateRow(){
+  updateRow(){ // Parse les données de toute les raws, remove toutes l'élement rows non à jour et set du Row
     let parsed = JSON.stringify(this.rows)
     localStorage.removeItem('rows')
     localStorage.setItem('rows', parsed)
   }
-
+// Ajout de la task
   addTask(row: Row) {
       const newTask: Task = {
         id: this.nextTaskId++,
@@ -52,10 +53,10 @@ export class Kanban implements OnInit{
       };
       row.tasks.push(newTask);
       row.taskInput = '';
-      this.updateRow()
+      this.updateRow() 
 
   }
-
+  // delete puis update
   deleteTask(row: Row, taskId: number) {
     row.tasks = row.tasks.filter(task => task.id !== taskId);
       this.updateRow()
@@ -64,10 +65,12 @@ export class Kanban implements OnInit{
 
   updateTask(row: Row, updatedTask: Task) {
     const index = row.tasks.findIndex(task => task.id === updatedTask.id);
+      this.updateRow()
       row.tasks[index] = updatedTask;
       this.updateRow()  
-
   }
+
+  // Enleve toutes les data
   clearAll(){ 
     localStorage.removeItem('rows')
     this.rows = []

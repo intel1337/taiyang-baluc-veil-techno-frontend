@@ -1,3 +1,5 @@
+// Dto Pour valider les données des tasks et typer
+
 export interface Task {
     id: number;
     title: string;

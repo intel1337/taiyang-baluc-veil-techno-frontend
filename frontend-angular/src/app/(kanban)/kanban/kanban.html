@@ -4,11 +4,14 @@
        <button class="add" (click)="addRow()">+ Add a Column</button>
   <button class="reset" (click)="clearAll()">Reset All</button>
 
+  <!--  Logique et boutons -->
+
   </div>
 
 
   <div class="rows">
-    <div class="row" *ngFor="let row of rows">
+    <div class="row" *ngFor="let row of rows"> 
+      <!-- Boucle for de row of le tableau rows -->
       <textarea [(ngModel)]="row.title" (ngModelChange)="updateRow()" rows="2" placeholder="Column Title"></textarea>
       <textarea [(ngModel)]="row.taskInput" (ngModelChange)="updateRow()" rows="3" placeholder="Add Task"></textarea>
       <button (click)="addTask(row)">Add</button>
@@ -19,7 +22,8 @@
           *ngFor="let task of row.tasks" 
           [task]="task"
           (deleteTask)="deleteTask(row, $event)"
-          (updateTask)="updateTask(row, $event)">
+          (updateTask)="updateTask(row, $event)"> 
+          <!-- Event Custom  -->
         </app-task>
       </div>
     </div>

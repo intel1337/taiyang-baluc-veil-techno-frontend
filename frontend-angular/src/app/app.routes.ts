@@ -5,10 +5,10 @@ import { Landing } from './landing/landing';
 export const routes: Routes = [
     {
         path: '',
-        component: Landing,
+        component: Landing, // déclaration de la route pour la landing page
     },
     {
         path: 'kanban',
-        component: Kanban,
+        component: Kanban, // déclaration de la route pour le kanban
     }
 ];
