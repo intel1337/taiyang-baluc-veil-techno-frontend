@@ -1,18 +1,48 @@
+<script setup>
+import { ref } from 'vue'
+
+const rows = ref([])
+let rowIdCounter = 1
+let taskIdCounter = 1
+
+function addRow() {
+  rows.value.push({
+    id: rowIdCounter++,
+    title: '',
+    taskInput: '',
+    tasks: []
+  })
+}
+
+function addTask(row) {
+    row.tasks.push({
+      id: taskIdCounter++,
+      title: row.taskInput
+    })
+    row.taskInput = ''
+}
+</script>
+
 <template>
   <div class="kanban">
-    <router-link to="/">Back to Main </router-link>
+    <router-link to="/">Back to Main Page</router-link>
     <button @click="addRow">+ Add a Column</button>
 
     <div class="rows">
+      <div class="row" v-for="row in rows" :key="row.id">
+        <textarea v-model="row.title" rows="2" placeholder="Column Title"></textarea>
+        <textarea v-model="row.taskInput" rows="3" placeholder="Add Task"></textarea>
+        <button @click="addTask(row)">Add</button>
+
         <div class="tasks-container">
-        
-        </div>
-   
-    </div>
+          <div class="task" v-for="task in row.tasks" :key="task.id">
+            {{ task.title }}
+          </div>
+          </div>
+      </div>
+     </div>
   </div>
 </template>
-
-
 
 <style scoped>
 .kanban {
@@ -24,7 +54,7 @@
     margin: 10px;
 }
 
-.kanban  button, a {
+.kanban button, a {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -38,7 +68,7 @@
     padding: 0 15px;
     margin-bottom: 20px;
     transition: 0.3s ease-in-out;
-    
+    text-decoration: none;
 }
 
 .kanban > button:hover {
@@ -61,11 +91,6 @@
     max-width: 35rem;
 }
 
-.row h3 {
-    margin: 0 0 10px 0;
-    color: black;
-}
-
 .row button {
     background-color: rgb(0, 0, 0);
     color: white;
@@ -73,7 +98,9 @@
     border-radius: 5px;
     padding: 8px 10px;
     cursor: pointer;
+    padding: 10px 12px;
     margin: 10px;
+    
 }
 
 .row button:hover {
@@ -87,25 +114,18 @@
     border-radius: 5px;
     font-size: 20px;
     margin-bottom: 10px;
-}
-
-.row ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
+    resize: vertical;
 }
 
 .tasks-container {
-  margin-top: 10px;
+    margin-top: 10px;
 }
 
+.task {
+    background-color: white;
+    padding: 10px;
+    margin: 5px 0;
+    border-radius: 5px;
+
+}
 </style>
-
-<script setup>
-
-import { useRouter } from 'vue-router'
-
-const router = useRouter()
-
-
-</script>

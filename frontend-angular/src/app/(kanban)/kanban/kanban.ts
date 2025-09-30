@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input, SimpleChanges } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 
@@ -13,6 +13,9 @@ import { TaskComponent } from '../task/task';
   styleUrl: './kanban.css'
 })
 export class Kanban {
+
+  
+  
   rows: Row[] = [];
   private nextTaskId = 1;
 
@@ -22,25 +25,41 @@ export class Kanban {
       taskInput: '',
       tasks: []
     });
+    this.saveRow()
+    
+  }
+  saveRow(){
+    let parsed = JSON.stringify(this.rows)
+    localStorage.setItem('rows', parsed)
+  }
+  updateRow(){
+    let parsed = JSON.stringify(this.rows)
+    localStorage.removeItem('rows')
+    localStorage.setItem('rows', parsed)
   }
 
   addTask(row: Row) {
       const newTask: Task = {
         id: this.nextTaskId++,
-        title: row.taskInput.trim(),
+        title: row.taskInput,
         description: ''
       };
       row.tasks.push(newTask);
       row.taskInput = '';
+      this.updateRow()
+
   }
 
   deleteTask(row: Row, taskId: number) {
     row.tasks = row.tasks.filter(task => task.id !== taskId);
+      this.updateRow()
+
   }
 
   updateTask(row: Row, updatedTask: Task) {
     const index = row.tasks.findIndex(task => task.id === updatedTask.id);
       row.tasks[index] = updatedTask;
+      this.updateRow()
 
   }
 }

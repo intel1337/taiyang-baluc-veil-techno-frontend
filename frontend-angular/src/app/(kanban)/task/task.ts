@@ -39,10 +39,13 @@ export class TaskComponent {
 
   saveTask() {
     this.updateTask.emit(this.editedTask);
+
     this.task.id = this.editedTask.id;
     this.task.title = this.editedTask.title;
     this.task.description = this.editedTask.description;
     this.editMode = false;
+    
+   
   }
 
   onDescriptionChange() {

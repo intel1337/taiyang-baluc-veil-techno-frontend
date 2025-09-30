@@ -12,5 +12,8 @@ export class Row {
   addNewRow(){
     this.newRowEvent.emit()
   }
+  saveRow(){
+    
+  }
 
 }

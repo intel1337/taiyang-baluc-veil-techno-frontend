@@ -1,12 +1,13 @@
 <div class="kanban">
-    <a routerLink="/">Back to Main Page</a>
+  <a routerLink="/">Back to Main Page</a>
   <button (click)="addRow()">+ Add a Column</button>
 
   <div class="rows">
     <div class="row" *ngFor="let row of rows">
-      <textarea [(ngModel)]="row.title" rows="2" placeholder="Column Title"></textarea>
-      <textarea [(ngModel)]="row.taskInput" rows="3" placeholder="Add Task"></textarea>
+      <textarea [(ngModel)]="row.title" (ngModelChange)="updateRow()" rows="2" placeholder="Column Title"></textarea>
+      <textarea [(ngModel)]="row.taskInput" (ngModelChange)="updateRow()" rows="3" placeholder="Add Task"></textarea>
       <button (click)="addTask(row)">Add</button>
+      <button (click)="updateRow()">Refresh</button>
 
       <div class="tasks-container">
         <app-task 
