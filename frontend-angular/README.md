@@ -37,6 +37,7 @@ et pour revenir sur la Landing page (router link comme href ou passage de props)
 - La version et le choix d'Angular 20 qui ne faisaient pas partie de mes connaissances ayant juste codé certains projets en Angular 17 et une montée de version de Angular 16 à 18
 
 
+
 # Arborescence 
 ```
 . # Root Folder
