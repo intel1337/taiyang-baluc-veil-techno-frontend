@@ -30,6 +30,7 @@ export class Kanban implements OnInit{
     this.rows.push({
       title: 'New Column',
       taskInput: '',
+      status: "Not Started",
       tasks: []
     });
     this.saveRow()

@@ -10,4 +10,5 @@ export interface Row {
     title: string;
     taskInput: string;
     tasks: Task[];
+    status: string;
   }

@@ -13,6 +13,7 @@
     <div class="row" *ngFor="let row of rows"> 
       <!-- Boucle for de row of le tableau rows -->
       <textarea [(ngModel)]="row.title" (ngModelChange)="updateRow()" rows="2" placeholder="Column Title"></textarea>
+      <input [(ngModel)]="row.status" (ngModelChange)="updateRow()" rows="2" >
       <textarea [(ngModel)]="row.taskInput" (ngModelChange)="updateRow()" rows="3" placeholder="Add Task"></textarea>
       <button (click)="addTask(row)">Add</button>
       <button (click)="updateRow()">Refresh</button>

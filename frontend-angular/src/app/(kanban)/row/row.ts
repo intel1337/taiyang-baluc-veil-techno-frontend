@@ -8,6 +8,7 @@ import { Component, EventEmitter, Output } from '@angular/core';
 })
 export class Row {
   @Output() newRowEvent = new EventEmitter<Row>
+
   
   addNewRow(){
     this.newRowEvent.emit()
