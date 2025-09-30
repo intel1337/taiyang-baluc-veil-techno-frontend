@@ -1,4 +1,25 @@
 # Document de Veille
+![alt text](image-1.png)
+![alt text](image.png)
+
+# Lancement Rapide / QuickStart :
+
+### Dépendances :
+- Avoir pnpm (conséillé) ou npm / yarn
+- Avoir L'environnement NodeJS
+- Avoir git (recommandé++)
+- Avoir angular-cli (obligé)
+
+
+```
+git clone https://github.com/intel1337/taiyang-baluc-veil-techno-frontend
+cd taiyang-baluc-veil-techno-frontend 
+pnpm i
+ng serve
+xdg-open http://localhost:4200 // Linux
+open -a Firefox http://localhost:4200 // MacOS
+start http://localhost:4200 // Windows
+```
 
 ## Présentation des Technologies :
 
@@ -35,6 +56,18 @@ et pour revenir sur la Landing page (router link comme href ou passage de props)
 - La verbosité et l'inversion de contrôle rigoureuse de ces 2 frameworks peuvent augmenter drastiquement la difficulté pour un développeur sans expérience notable en TypeScript / OOP / design patterns souvent retrouvés via Spring Boot, DRF (Django Rest Framework) ou Blazor / ASP.NET
 
 - La version et le choix d'Angular 20 qui ne faisaient pas partie de mes connaissances ayant juste codé certains projets en Angular 17 et une montée de version de Angular 16 à 18
+
+
+## Segmentation du développement
+1. Méthodes à appliquer et BrainStorming
+2. Définition du projet et du cahier des charges
+3. Conception du front-end
+4. Prototypage de la logique
+5. Finalisation de la Logique
+6. Finalisation du Front End
+7. Refactor & documentation
+
+
 
 
 # Arborescence 
@@ -88,23 +121,5 @@ et pour revenir sur la Landing page (router link comme href ou passage de props)
 10 directories, 35 files
 ```
 
-# Lancement Rapide / QuickStart :
-
-### Dépendances :
-- Avoir pnpm (conséillé) ou npm / yarn
-- Avoir L'environnement NodeJS
-- Avoir git (recommandé++)
-- Avoir angular-cli (obligé)
-
-
-```
-git clone https://github.com/intel1337/taiyang-baluc-veil-techno-frontend
-cd taiyang-baluc-veil-techno-frontend 
-pnpm i
-ng serve
-xdg-open http://localhost:4200 // Linux
-open -a Firefox http://localhost:4200 // MacOS
-start http://localhost:4200 // Windows
-```
 
 
