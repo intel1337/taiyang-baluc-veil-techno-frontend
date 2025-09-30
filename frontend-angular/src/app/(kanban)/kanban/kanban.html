@@ -1,13 +1,17 @@
 <div class="kanban">
-  <a routerLink="/">Back to Main Page</a>
-  <button (click)="addRow()">+ Add a Column</button>
+  <div class="buttonslist">
+       <a routerLink="/">Back to Main Page</a>
+       <button class="add" (click)="addRow()">+ Add a Column</button>
+  <button class="reset" (click)="clearAll()">Reset All</button>
+
+  </div>
+
 
   <div class="rows">
     <div class="row" *ngFor="let row of rows">
       <textarea [(ngModel)]="row.title" (ngModelChange)="updateRow()" rows="2" placeholder="Column Title"></textarea>
       <textarea [(ngModel)]="row.taskInput" (ngModelChange)="updateRow()" rows="3" placeholder="Add Task"></textarea>
       <button (click)="addTask(row)">Add</button>
-      <button (click)="clearAll()">Reset All</button>
       <button (click)="updateRow()">Refresh</button>
 
       <div class="tasks-container">

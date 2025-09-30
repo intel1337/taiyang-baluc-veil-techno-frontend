@@ -81,3 +81,16 @@
 .tasks-container {
   margin-top: 10px;
 }
+
+
+.buttonslist {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+
+.buttonslist :hover {
+    background-color: green;
+}
+
