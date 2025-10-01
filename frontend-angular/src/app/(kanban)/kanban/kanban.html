@@ -35,7 +35,7 @@
 
 
   <div class="rows">
-    <div class="row" *ngFor="let row of rows"> 
+    <div class="row" *ngFor="let row of rows" cdkDrag> 
       <!-- Boucle for de row of le tableau rows -->
       <input id="title" [(ngModel)]="row.title" (ngModelChange)="updateRow()" rows="2" placeholder="Title..">
       <input id="status" [(ngModel)]="row.status" (ngModelChange)="updateRow()" rows="2" >
@@ -48,7 +48,9 @@
           *ngFor="let task of row.tasks" 
           [task]="task"
           (deleteTask)="deleteTask(row, $event)"
-          (updateTask)="updateTask(row, $event)"> 
+          (updateTask)="updateTask(row, $event)"
+          
+          > 
           <!-- Event Custom  -->
         </app-task>
       </div>

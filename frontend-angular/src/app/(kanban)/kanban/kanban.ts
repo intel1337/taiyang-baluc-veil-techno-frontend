@@ -1,5 +1,6 @@
 import { Component, Input, OnInit, SimpleChanges } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { CdkDrag, CdkDragHandle, CdkDropList } from '@angular/cdk/drag-drop';
 import { FormsModule } from '@angular/forms';
 
 import { Row, Task } from '../model/kanban';
@@ -9,7 +10,7 @@ import gsap from 'gsap';
 
 @Component({
   selector: 'app-kanban',
-  imports: [CommonModule, FormsModule, RouterOutlet, RouterLink, TaskComponent],
+  imports: [CommonModule, FormsModule, RouterOutlet, RouterLink, TaskComponent, CdkDrag, CdkDragHandle, CdkDropList],
   templateUrl: './kanban.html',
   styleUrl: './kanban.css'
 })

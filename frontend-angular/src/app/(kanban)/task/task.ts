@@ -2,10 +2,11 @@ import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { Task } from '../model/kanban';
+import {CdkDrag} from '@angular/cdk/drag-drop';
 
 @Component({
   selector: 'app-task',
-  imports: [CommonModule, FormsModule],
+  imports: [CommonModule, FormsModule, CdkDrag],
   templateUrl: './task.html',
   styleUrl: './task.css'
 })
