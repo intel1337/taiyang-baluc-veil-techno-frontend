@@ -1,8 +1,33 @@
 <div class="kanban">
   <div class="buttonslist">
-       <a routerLink="/">Back to Main Page</a>
-       <button class="add" (click)="addRow()">+ Add a Column</button>
-  <button class="reset" (click)="clearAll()">Reset All</button>
+       <a routerLink="/">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640"><!--!Font Awesome Free v7.0.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.--><path fill="#ffffff" d="M73.4 297.4C60.9 309.9 60.9 330.2 73.4 342.7L233.4 502.7C245.9 515.2 266.2 515.2 278.7 502.7C291.2 490.2 291.2 469.9 278.7 457.4L173.3 352L544 352C561.7 352 576 337.7 576 320C576 302.3 561.7 288 544 288L173.3 288L278.7 182.6C291.2 170.1 291.2 149.8 278.7 137.3C266.2 124.8 245.9 124.8 233.4 137.3L73.4 297.3z"/></svg>
+       </a>
+
+       <button class="add" (click)="addRow()">
+
+        <svg width="800px" height="800px" viewBox="0 0 48 48" version="1" xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 48 48">
+            <path fill="#90CAF9" d="M43,30V18c0-2.2-1.8-4-4-4H9c-2.2,0-4,1.8-4,4v12c0,2.2,1.8,4,4,4h30C41.2,34,43,32.2,43,30z M9,18h30v12 L9,30V18z"/>
+            <circle fill="#43A047" cx="38" cy="38" r="10"/>
+            <g fill="#ffffff">
+                <rect x="32" y="36" width="12" height="4"/>
+                <rect x="36" y="32" width="4" height="12"/>
+            </g>
+        </svg>
+        
+       </button>
+  <button class="reset" (click)="clearAll()">
+    <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" 
+	 viewBox="0 0 32 32" enable-background="new 0 0 32 32" xml:space="preserve">
+<path fill="none" stroke="#ffffff" stroke-width="2" stroke-miterlimit="10" d="M23,27H11c-1.1,0-2-0.9-2-2V8h16v17
+	C25,26.1,24.1,27,23,27z"/>
+<line fill="none" stroke="#ffffff" stroke-width="2" stroke-miterlimit="10" x1="27" y1="8" x2="7" y2="8"/>
+<path fill="none" stroke="#fff" stroke-width="2" stroke-miterlimit="10" d="M14,8V6c0-0.6,0.4-1,1-1h4c0.6,0,1,0.4,1,1v2"/>
+<line fill="none" stroke="#fff" stroke-width="2" stroke-miterlimit="10" x1="17" y1="23" x2="17" y2="12"/>
+<line fill="none" stroke="#fff" stroke-width="2" stroke-miterlimit="10" x1="21" y1="23" x2="21" y2="12"/>
+<line fill="none" stroke="#fff" stroke-width="2" stroke-miterlimit="10" x1="13" y1="23" x2="13" y2="12"/>
+</svg>
+  </button>
 
   <!--  Logique et boutons -->
 
@@ -12,13 +37,13 @@
   <div class="rows">
     <div class="row" *ngFor="let row of rows"> 
       <!-- Boucle for de row of le tableau rows -->
-      <textarea [(ngModel)]="row.title" (ngModelChange)="updateRow()" rows="2" placeholder="Column Title"></textarea>
-      <input [(ngModel)]="row.status" (ngModelChange)="updateRow()" rows="2" >
+      <input id="title" [(ngModel)]="row.title" (ngModelChange)="updateRow()" rows="2" placeholder="Title..">
+      <input id="status" [(ngModel)]="row.status" (ngModelChange)="updateRow()" rows="2" >
       <textarea [(ngModel)]="row.taskInput" (ngModelChange)="updateRow()" rows="3" placeholder="Add Task"></textarea>
       <button (click)="addTask(row)">Add</button>
-      <button (click)="updateRow()">Refresh</button>
 
       <div class="tasks-container">
+        
         <app-task 
           *ngFor="let task of row.tasks" 
           [task]="task"

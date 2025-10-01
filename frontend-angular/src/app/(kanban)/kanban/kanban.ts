@@ -28,7 +28,7 @@ export class Kanban implements OnInit{
 
   addRow() { // Ajoute un Row
     this.rows.push({
-      title: 'New Column',
+      title: '',
       taskInput: '',
       status: "Not Started",
       tasks: []

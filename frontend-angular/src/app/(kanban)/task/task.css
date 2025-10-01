@@ -1,21 +1,23 @@
 .task-item {
-  background-color: white;
   border: 1px solid gray;
   border-radius: 5px;
   padding: 30px;
   margin: 5px 0;
+  max-height: 2rem;
   cursor: pointer;
   transition: 0.2s;
+  color: white;
+  background-color: rgb(52, 52, 52);
 }
 
 .task-item:hover {
-  background-color: #f0f0f0;
+  background-color: #414141;
   transform: scale(1.02);
 }
 
 .task-item h4 {
   margin: 0 0 5px 0;
-  color: black;
+  color: rgb(255, 255, 255);
 }
 
 .task-date {
@@ -45,6 +47,7 @@
   width: 90%;
   max-height: 80vh;
   overflow-y: auto;
+  
 }
 
 .menu-content h2 {
