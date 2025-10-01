@@ -1,7 +1,10 @@
 
 # outdated doc
 ## Document de Veille Front-end
-![alt text](image-1.png)
+<img width="1378" height="746" alt="image" src="https://github.com/user-attachments/assets/e86b0dce-d73e-474a-8356-13c8297d40a8" />
+
+<img width="1393" height="764" alt="image" src="https://github.com/user-attachments/assets/8668d356-2385-42e0-9d8f-8e938d38075f" />
+
 ![alt text](image.png)
 
 # Lancement Rapide / QuickStart :
