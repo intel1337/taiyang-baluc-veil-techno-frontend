@@ -52,6 +52,18 @@
 
 }
 
+.buttonslist input {
+    background: none;
+    outline: none;
+    font-size: 30px;
+    color:white;
+    border: none;
+    border: 1px dashed white;
+    border-radius: 10px;
+
+
+}
+
 
 .kanban svg{
     width: 40px;;
