@@ -5,6 +5,7 @@ import { FormsModule } from '@angular/forms';
 import { Row, Task } from '../model/kanban';
 import { RouterOutlet, RouterLink } from '@angular/router';
 import { TaskComponent } from '../task/task';
+import gsap from 'gsap';
 
 @Component({
   selector: 'app-kanban',
@@ -15,6 +16,12 @@ import { TaskComponent } from '../task/task';
 export class Kanban implements OnInit{
   // Sur le mount du component prends les données dans le local storage si elles existent puis angular s'occupe de rerender
   ngOnInit(): void {
+    //rotate and move elements with a class of "box" ("x" is a shortcut for a translateX() transform) over the course of 1 second.
+    gsap.to("#divtest", { opacity: 0 })
+    gsap.to(".kanban", {duration: 1 })
+    gsap.to("#divtest", { opacity: 1 })
+
+
     const savedRows = localStorage.getItem('rows');
     if (savedRows) {
       this.rows = JSON.parse(savedRows);

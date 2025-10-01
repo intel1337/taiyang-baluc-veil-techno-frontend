@@ -1,5 +1,5 @@
 .task-item {
-  border: 1px solid gray;
+  border: 1px solid rgb(255, 249, 249);
   border-radius: 5px;
   padding: 30px;
   margin: 5px 0;
@@ -8,22 +8,32 @@
   transition: 0.2s;
   color: white;
   background-color: rgb(52, 52, 52);
+  animation: slide-fade 1s;
+
 }
 
 .task-item:hover {
   background-color: #414141;
   transform: scale(1.02);
+  transition: 0.5s ease-in-out;
+
 }
 
 .task-item h4 {
   margin: 0 0 5px 0;
   color: rgb(255, 255, 255);
+  transition: 0.5s ease-in-out;
+   animation: slide-fade 1.5s;
+
+
 }
 
 .task-date {
   margin: 0;
   font-size: 12px;
   color: gray;
+  transition: 0.5s ease-in-out;
+
 }
 
 .task-menu {
@@ -37,6 +47,9 @@
   justify-content: center;
   align-items: center;
   z-index: 2;
+  animation: slide-fade 1s;
+
+
 }
 
 .menu-content {
@@ -47,12 +60,18 @@
   width: 90%;
   max-height: 80vh;
   overflow-y: auto;
+  transition: 0.5s ease-in-out;
+  animation: slide-fade 1s;
+
+
   
 }
 
 .menu-content h2 {
   margin: 0 0 20px 0;
   color: black;
+  transition: 0.5s ease-in-out;
+
 }
 
 
@@ -60,6 +79,8 @@
   color: gray;
   font-size: 14px;
   margin: 15px 0;
+  transition: 0.5s ease-in-out;
+
 }
 
 .menu-content label {
@@ -67,15 +88,19 @@
   margin: 15px 0 5px 0;
   font-weight: bold;
   color: black;
+  transition: 0.5s ease-in-out;
+
 }
 
 .menu-content textarea {
   width: 100%;
-  border: 1px solid gray;
+  border: 1px solid rgb(255, 253, 253);
   border-radius: 5px;
 
   margin-bottom: 15px;
   font-family: inherit;
+  transition: 0.5s ease-in-out;
+
   resize: vertical;
 }
 
@@ -84,6 +109,8 @@
   gap: 1rem;
   flex-wrap: wrap;
   margin-top: 20px;
+  transition: 0.5s ease-in-out;
+
 }
 
 .menu-content button {
@@ -101,6 +128,8 @@
   margin: 0;
   padding: 10px 12px;
   text-align: center;
+  transition: 0.5s ease-in-out;
+
   transition: all 200ms;
   vertical-align: baseline;
   white-space: nowrap;
@@ -114,8 +143,22 @@
 
 .menu-content button:hover {
   background-color: rgb(48, 48, 48);
+  transition: 0.5s ease-in-out;
 }
 
+
+
+
+@keyframes slide-fade {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 
 
 

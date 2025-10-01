@@ -5,7 +5,20 @@
     display: flex;
     flex-direction: column;
     margin: 10px;
+    animation: slide-fade 2s;
 }
+
+@keyframes slide-fade {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 
 
 .kanban  button, a {
@@ -26,6 +39,19 @@
 
     
 }
+.kanban a{
+    animation: slide-fade 2.5s;
+
+}
+.kanban .add {
+    animation: slide-fade 3s;
+
+}
+.kanban .reset {
+    animation: slide-fade 3.5s;
+
+}
+
 
 .kanban svg{
     width: 40px;;
@@ -42,13 +68,15 @@
 
 .row {
     
-    background-color: #1d4ea4;
+    background: #737cfa;
+    background: linear-gradient(128deg, rgba(115, 124, 250, 1) 0%, rgba(12, 105, 235, 1) 100%);
     border-radius: 15px;
     padding: 20px;
     min-height: 200px;
     display: flex;
     flex-direction: column;
     max-width: 22rem;
+    animation: slide-fade 2s;
 }
 
 .row h3 {
@@ -74,12 +102,13 @@
 
 .row textarea {
     outline: none;
-    border: dashed 1px black;
-    font-size: 30px;
+    border: dashed 1px rgb(241, 241, 241);
+    font-size: 15px;
     text-align: left;
     color: white;
     padding: 10px;
-    max-height: 2rem;
+    max-height: 1rem;
+    max-width: 12rem;
     border-radius: 25px;
     background: none;
 }
