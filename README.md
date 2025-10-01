@@ -1,5 +1,5 @@
 
-# outdated doc
+# UseCase Déprécated
 ## Document de Veille Front-end
 <img width="1378" height="746" alt="image" src="https://github.com/user-attachments/assets/e86b0dce-d73e-474a-8356-13c8297d40a8" />
 
