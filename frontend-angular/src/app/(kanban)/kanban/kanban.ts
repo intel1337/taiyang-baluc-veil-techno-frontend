@@ -7,6 +7,7 @@ import { Row, Task } from '../model/kanban';
 import { RouterOutlet, RouterLink } from '@angular/router';
 import { TaskComponent } from '../task/task';
 import gsap from 'gsap';
+import { timeout } from 'rxjs/internal/operators/timeout';
 
 @Component({
   selector: 'app-kanban',
@@ -29,6 +30,8 @@ export class Kanban implements OnInit{
     }
   }
 
+   message :string = ''
+  
   
   
   rows: Row[] = []; // déclaration d'un array de type Row (voir /model)
@@ -42,16 +45,19 @@ export class Kanban implements OnInit{
       tasks: []
     });
     this.saveRow()
+    this.message = 'Row Added' 
     
   }
   saveRow(){ // Save la row dans le localstorage 
     let parsed = JSON.stringify(this.rows) // Serialization Json
     localStorage.setItem('rows', parsed)
+    this.message = 'Board Saved'
   }
   updateRow(){ // Parse les données de toute les raws, remove toutes l'élement rows non à jour et set du Row
     let parsed = JSON.stringify(this.rows)
     localStorage.removeItem('rows')
     localStorage.setItem('rows', parsed)
+    this.message = 'Board Updated'
   }
 // Ajout de la task
   addTask(row: Row) {
@@ -62,13 +68,15 @@ export class Kanban implements OnInit{
       };
       row.tasks.push(newTask);
       row.taskInput = '';
-      this.updateRow() 
+      this.updateRow()
+      this.message = 'Task Added'
 
   }
   // delete puis update
   deleteTask(row: Row, taskId: number) {
     row.tasks = row.tasks.filter(task => task.id !== taskId);
       this.updateRow()
+      this.message = 'Task Deleted'
 
   }
 
@@ -77,6 +85,7 @@ export class Kanban implements OnInit{
       this.updateRow()
       row.tasks[index] = updatedTask;
       this.updateRow()  
+      this.message = 'Task Updated'
   }
 
   // Enleve toutes les data

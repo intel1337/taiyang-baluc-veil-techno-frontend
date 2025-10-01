@@ -52,6 +52,11 @@
 
 }
 
+.kanban a:hover, .kanban button:hover {
+    background-color: #3b82f6;
+    transform: scale(1.05);
+}
+
 .buttonslist input {
     background: none;
     outline: none;
@@ -60,6 +65,7 @@
     border: none;
     border: 1px dashed white;
     border-radius: 10px;
+    max-height: 2.3rem;
 
 
 }
@@ -95,6 +101,16 @@
 .row h3 {
     margin: 0 0 10px 0;
     color: black;
+}
+#title::placeholder
+{
+    color: white;
+    opacity: 0.7;
+}
+.input::placeholder
+{
+    color: white;
+    opacity: 0.7;
 }
 
 .row button {

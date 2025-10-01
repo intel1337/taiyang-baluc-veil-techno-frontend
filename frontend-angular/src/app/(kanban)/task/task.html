@@ -1,8 +1,12 @@
+
+
+
 <div class="task-item"  (click)="openMenu()">
   <h4>{{ task.title }}</h4> 
   <!-- Titre -->
 </div>
 <!--  div Cliquable -->
+
 
 
 <!-- If menu open -->
@@ -26,8 +30,8 @@
     @if (editMode) { 
       <div>
         <!-- Form Angular pour récuperer les inputs -->
-      <input [(ngModel)]="editedTask.title" />
-      <textarea [(ngModel)]="editedTask.description" rows="3"></textarea>
+      <input [(ngModel)]="editedTask.title" placeholder="Title" />
+      <textarea [(ngModel)]="editedTask.description" placeholder="Description" rows="3"></textarea>
       <button (click)="saveTask()">Save</button>
       <button (click)="editMode = false">Cancel</button>
     </div>

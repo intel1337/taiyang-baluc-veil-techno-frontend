@@ -37,12 +37,12 @@
 }
 
 .task-menu {
-  position: fixed;
+  position: absolute;
   top: 0;
   left: 0;
   width: 100vw;
   height: 100vh;
-  background-color: rgba(0, 0, 0, 0.8);
+
   display: flex;
   justify-content: center;
   align-items: center;
@@ -53,7 +53,7 @@
 }
 
 .menu-content {
-  background-color: white;
+  background-color: rgb(43, 43, 43);
   border-radius: 10px;
   padding: 30px;
   max-width: 500px;
@@ -69,7 +69,7 @@
 
 .menu-content h2 {
   margin: 0 0 20px 0;
-  color: black;
+  color: rgb(255, 255, 255);
   transition: 0.5s ease-in-out;
 
 }
@@ -93,18 +93,34 @@
 }
 
 .menu-content textarea {
+  color: white;
+  font-size: large;
   width: 100%;
-  border: 1px solid rgb(255, 253, 253);
+  border: 1px solid rgb(255, 255, 255);
   border-radius: 5px;
-
   margin-bottom: 15px;
   font-family: inherit;
   transition: 0.5s ease-in-out;
+  background-color: #272727;
 
   resize: vertical;
 }
+.menu-content input {
+  color: white;
+  font-size: large;
+  width: 100%;
+  border: 1px solid rgb(255, 255, 255);
+  border-radius: 5px;
+  margin-bottom: 15px;
+  font-family: inherit;
+  transition: 0.5s ease-in-out;
+  background-color: #272727;
+
+}
 
 .menu-buttons {
+  gap: 5px;
+
   display: flex;
   gap: 1rem;
   flex-wrap: wrap;
@@ -114,7 +130,7 @@
 }
 
 .menu-content button {
-  background-color: black;
+  background-color: rgb(47, 55, 202);
   border-radius: 8px;
   border-width: 0;
   color: #ffffff;
