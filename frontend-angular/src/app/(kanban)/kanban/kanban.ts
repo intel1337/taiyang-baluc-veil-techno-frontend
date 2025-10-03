@@ -64,7 +64,8 @@ export class Kanban implements OnInit{
       const newTask: Task = {
         id: this.nextTaskId++,
         title: row.taskInput,
-        description: ''
+        description: '',
+        date: Date.now()
       };
       row.tasks.push(newTask);
       row.taskInput = '';

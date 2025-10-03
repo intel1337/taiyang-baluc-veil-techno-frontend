@@ -1,9 +1,10 @@
 
 
 
-<div class="task-item" cdkDrag  (click)="openMenu()">
-  <h4>{{ task.title }}</h4> 
-  <!-- Titre -->
+<div class="task-item"  (click)="openMenu()">
+  <h4>{{ task.title }}</h4>
+  <p>{{ task.description }}</p>
+  <p>{{ task.date | date:'dd/MM/yyyy HH:mm' }}</p>
 </div>
 <!--  div Cliquable -->
 

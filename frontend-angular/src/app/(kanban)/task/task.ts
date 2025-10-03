@@ -22,7 +22,7 @@ export class TaskComponent {
   editMode = false;
 
   
-  editedTask: Task = { id: 0, title: '', description: '' };
+  editedTask: Task = { id: 0, title: '', description: '', date: Date.now() };
   // Ouvre le Menu
   openMenu() {
     this.showMenu = true;
@@ -39,11 +39,14 @@ export class TaskComponent {
   }
   // Sauvegarde la task
   saveTask() {
+    // Set or update the date to now when saving
+    this.editedTask.date = Date.now();
     this.updateTask.emit(this.editedTask);
 
     this.task.id = this.editedTask.id;
     this.task.title = this.editedTask.title;
     this.task.description = this.editedTask.description;
+    this.task.date = this.editedTask.date;
     this.editMode = false;
   }
   // Envoi de signal on change

@@ -3,7 +3,7 @@
   border-radius: 5px;
   padding: 30px;
   margin: 5px 0;
-  max-height: 2rem;
+
   cursor: pointer;
   transition: 0.2s;
   color: white;
@@ -34,6 +34,11 @@
   color: gray;
   transition: 0.5s ease-in-out;
 
+}
+
+.task-item .task-date {
+  margin-top: 6px;
+  opacity: 0.9;
 }
 
 .task-menu {
@@ -176,5 +181,11 @@
   }
 }
 
+.task-item p {
+  margin: 10px 0 0 0;
+  color: rgb(200, 200, 200);
+  transition: 0.5s ease-in-out;
+   animation: slide-fade 1.5s;    
+}
 
 
