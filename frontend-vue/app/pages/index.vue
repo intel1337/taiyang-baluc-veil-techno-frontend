@@ -9,8 +9,6 @@ import "../globals.css"
         <h1>Welcome to the Kanban</h1>
         <p>In Japanese, kanban literally translates to "signboard." Kanban teams represent every work item as a separate card on board.</p>
        <NuxtLink class="button" to="/kanban">Discover</NuxtLink>
-       <!-- Router Link vers la page kanban remplace le href en angular -->
-
     </div>
 </section>
 </template>
